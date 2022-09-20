@@ -42,10 +42,10 @@ function App() {
       <Person></Person>
       <Person></Person>
       <h3>New Component</h3>
-      <Person2></Person2>
-      <Person2></Person2>
-      <Person2></Person2>
-      <Person2></Person2>
+      <Person2 name="Colkdaline Costfer" job="Bodyguard"></Person2>
+      <Person2 name="Hash" job="Coding"></Person2>
+      <Person2 name="Asterix Deep" job="Gaming"></Person2>
+      <Person2 name="Alkaline Foster" job="Everything"></Person2>
     </div>
   );
 }
@@ -58,11 +58,11 @@ function Person(){
     </div>
   )
 }
-function Person2(){
+function Person2(props){
   return(
     <div className="person">
-      <h1> Colkdaline Costfer </h1>
-      <p> Guarding Alkaline Foster </p>
+      <h1> Name: {props.name} </h1>
+      <p> Job: {props.job} </p>
     </div>
   )
 }
