@@ -11,7 +11,27 @@ const musicStyle = {
   padding: "10px 20px",
 };
 
+const musicians = [
+  { name: "Michael Romeo", band: "SymphonyX", role: "Guitarist" },
+  { name: "Oli Herbert", band: "All That Remains", role: "Guitarist" },
+  {
+    name: 'Jimmy "The Rev" Sulivan',
+    band: "Avenged Sevenfold",
+    role: "Drummer",
+  },
+  { name: "Mike Portnoy", band: "Dream Theater", role: "Drummer" },
+  { name: "John Petrucci", band: "Dream Theater", role: "Guitarist" },
+  { name: "Jordan Ruddess", band: "Dream Theater", role: "Keyboardist" },
+];
+
 function App() {
+  const bands = [
+    "SymphonyX",
+    "All That Remains",
+    "Megadeth",
+    "Archspire",
+    "Arch Enemy",
+  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -46,25 +66,51 @@ function App() {
       <Person2 name="Hash" job="Coding"></Person2>
       <Person2 name="Asterix Deep" job="Gaming"></Person2>
       <Person2 name="Alkaline Foster" job="Everything"></Person2>
+      {bands.map((band) => (
+        <Bands name={band}></Bands>
+      ))}
+      {musicians.map((musician) => (
+        <Musicians
+          name={musician.name}
+          band={musician.band}
+          role={musician.role}
+        ></Musicians>
+      ))}
     </div>
   );
 }
 
-function Person(){
-  return(
+function Person() {
+  return (
     <div className="person">
       <h1> Alkaline Foster </h1>
       <p> Learning React </p>
     </div>
-  )
+  );
 }
-function Person2(props){
-  return(
+function Person2(props) {
+  return (
     <div className="person">
       <h1> Name: {props.name} </h1>
       <p> Job: {props.job} </p>
     </div>
-  )
+  );
+}
+function Bands(props) {
+  return (
+    <div className="band">
+      <h1> BAND: {props.name} </h1>
+    </div>
+  );
+}
+function Musicians(props) {
+  return (
+    <div className="musician">
+      <h1> Name: {props.name} </h1>
+      <h1> Role: {props.role} </h1>
+      <h1> Band: {props.band} </h1>
+    </div>
+  );
 }
 
 export default App;

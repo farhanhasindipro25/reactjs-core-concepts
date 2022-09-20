@@ -13,3 +13,9 @@
 - Syntax of accessing the data dynamically within the component/function:
 {props.propsName}
 - This gives the similar in look, different in data look.
+
+4. Creating multiple components from an array of objects/arrays/objects.
+- A new and certain code snippet can be contained within '{}'.
+- the array of objects/array/objects is mapped, and in the map function's return statement, the custom named component JSX is written with appropriate props.
+- The map function iterates as usual through the data structure and returns each element in the name of the variable.
+- Within the component/function, dynamically props are passed as per the names.
