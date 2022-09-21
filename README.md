@@ -35,13 +35,13 @@ the state variable may be used directly and dynamically, along with the arrow fu
 - Syntax: useEffect(()=>{},[]).
 - Without dependency: Renders in an infinite loop.
 useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('url')
       .then(res => res.json())
       .then(data => console.log(data))
 })
 - To solve this, add an empty array in place of what is supposed to hold the dependencies.
 useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('url')
       .then(res => res.json())
       .then(data => console.log(data))
 },[])
