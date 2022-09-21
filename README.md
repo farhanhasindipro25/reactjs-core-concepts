@@ -29,3 +29,28 @@
 - The setStateVariable may be used in any arrow functions as needed.
 - Within the return statement of the component,
 the state variable may be used directly and dynamically, along with the arrow functions that return the changes in the setStateVariable.
+
+6. useEffect.
+- Syntax: useEffect(arrowFunction, dependencies)
+- Syntax: useEffect(()=>{},[]).
+- Without dependency: Renders in an infinite loop.
+useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => console.log(data))
+})
+- To solve this, add an empty array in place of what is supposed to hold the dependencies.
+useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => console.log(data))
+},[])
+
+
+Summary: To load external data from API
+1. Declare a state using "useState()".
+2. Apply useEffect(anonymous function, empty array).
+3. Load Data inside the anonymous function(fetch).
+4. Connect with state by calling setStateVariable(loadedData).
+5. Show the data using map() function. Using components are allowed.
+
