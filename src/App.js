@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 const number = 333;
 const vocalist = { name: "Dave Mustaine", band: "Megadeth" };
@@ -76,7 +77,11 @@ function App() {
           role={musician.role}
         ></Musicians>
       ))}
+
+      <Counter></Counter>
+      
     </div>
+
   );
 }
 
@@ -111,6 +116,21 @@ function Musicians(props) {
       <h1> Band: {props.band} </h1>
     </div>
   );
+}
+
+function Counter(){
+  const [count, setCount] = useState(55);
+
+  const increaseCount = () => setCount(count + 1);
+  const decreaseCount = () => setCount(count - 1);
+
+  return(
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={increaseCount}>+</button>
+      <button onClick={decreaseCount}>-</button>
+    </div>
+  )
 }
 
 export default App;

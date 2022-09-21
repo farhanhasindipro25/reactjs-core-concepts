@@ -19,3 +19,13 @@
 - the array of objects/array/objects is mapped, and in the map function's return statement, the custom named component JSX is written with appropriate props.
 - The map function iterates as usual through the data structure and returns each element in the name of the variable.
 - Within the component/function, dynamically props are passed as per the names.
+
+5. useState.
+- Allows to store state variables within functional components.
+- Syntax: const [stateVariable, setStateVariable] = useState(initialValue);
+- The state variable represents entities that will change their state.
+- setStateVariable helps to set the new state that the state variable will accomplish
+- Initial value can be anything.
+- The setStateVariable may be used in any arrow functions as needed.
+- Within the return statement of the component,
+the state variable may be used directly and dynamically, along with the arrow functions that return the changes in the setStateVariable.
